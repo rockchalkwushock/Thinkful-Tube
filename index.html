@@ -1,66 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- Styling Sheets -->
+    <!-- Styling Sheets -->
     <!-- Normalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Local -->
     <link rel="stylesheet" href="css/main.css">
-  <!-- Meta -->
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="This app will take in user input and display links to YouTube videos corresponding to their input.">
-  <!-- Title -->
+    <!-- Title -->
     <title>Thinkful Tube</title>
   </head>
-  <body>
-    <div class="container-fluid centerDiv">
-      <header>
-        <h1 class="header-text">Welcome to Thinkul Tube</h1>
-      </header>
-      <div id="search-form" class="input-group">
-        <input id="query" type="text" class="form-control" placeholder="Search">
-        <span class="input-group-btn">
-          <button id="submit" class="btn-btn-secondary"type="submit" >Search</button>
-        </span>
-      </div>
-      <div id="reults" class="results">
-        <ul class="nav nav-tabs">
-          <li class="active" role="presentation" id="stackoverflow-results"><a href="#">StackOverflow</a></li>
-          <li role="presentation" id="w3s-results"><a href="#">W3S</a></li>
-          <li role="presentation" id="jquery-results"><a href="#">jQuery</a></li>
-          <li role="presentation" id="youtube-results"><a href="#">YouTube</a></li>
-        </ul>
-        <div class="results-table">
-          <table>
-            <thead id="stackoverflow-tab">
-              <tr></tr>
-            </thead>
-            <thead id="w3s-tab">
-              <tr></tr>
-            </thead>
-            <thead id="jquery-tab">
-              <tr></tr>
-            </thead>
-            <thead id="youtube-tab">
-              <tr></tr>
-            </thead>
-          <tbody id="stackoverflow"></tbody>
-          <tbody id="w3s"></tbody>
-          <tbody id="jquery"></tbody>
+<body>
+  <!-- Form Container -->
+  <div class="container-fluid centerDiv">
+    <!-- Header -->
+    <header>
+      <h1 class="header-text">Welcome to Thinkful Tube!</h1>
+    </header>
+    <!-- Form - Input Group -->
+    <div id="search-form" class="input-group">
+      <!-- Input Region -->
+      <input id="query" type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+      <!-- Button - inline with Input Region -->
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit" id="submit">Go</button>
+      </span>
+    </div>
+    <!-- Search Results Container -->
+    <div class="results" id="results">
+      <!-- Nav Bar for tabbed API's -->
+      <ul class="nav nav-tabs">
+        <!-- YouTube Tab -->
+        <li class="active" role="presentation" id="youtube-results"><a href="#">Youtube</a></li>
+        <!-- StackOverflow Tab -->
+        <!-- <li role="presentation" id="stackoverflow-results"><a href="#">StackOverflow</a></li> -->
+      </ul>
+      <!-- Top 10 Results for corresponding API Tabs -->
+      <div class="results-table">
+        <table class="table table-hover table-white">
+          <thead id="youtube-tab">
+            <tr>
+              <th>#</th>
+              <th>Video Title</th>
+              <th>YouTube Channel</th>
+              <th>Play</th>
+            </tr>
+          </thead>
+          <!-- <thead id="stackoverflow-tab">
+            <tr>
+              <th>#</th>
+              <th>Thread Title</th>
+              <th>Answers</th>
+              <th>View</th>
+            </tr>
+          </thead> -->
           <tbody id="youtube"></tbody>
-          </table>
-        </div>
+          <!-- <tbody id="stackoverflow"></tbody> -->
+        </table>
       </div>
     </div>
-  <footer class="footer-text"></footer>
+  </div>
+<div class="template hidden">
+  <!--
+videosArrayValue.snippet.title  videosArrayValue.snippet.channelTitle
+  https://www.youtube.com/watch?v="+ videosArrayValue.id.videoId + " --->>
+<table>
+  <tr>
+    <th></th>
+    <td class="title"></td>
+    <td class='channel'></td>
+    <td ><a href=''target='_blank' class="link">Play</a></td>
+  </tr>
+</table>
+
+</div>
+
+
     <!-- Scripts -->
       <!-- jQuery Library -->
       <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
       <!-- Local Scritps -->
-      <!-- <script type="text/javascript" src="js/app.js"></script> -->
+      <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

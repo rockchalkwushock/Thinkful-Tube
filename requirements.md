@@ -1,5 +1,9 @@
+
+
 App Requirements
-Accept a user search term Get JSON from the YouTube API based on the user search term *Display the thumbnail image of the returned videos
+Accept a user search term Get JSON from the YouTube API based on the user search term
+*Display the thumbnail image of the returned videos
+
 
 Optional Advanced functionality challenges
 Make the images clickable, leading the user to the YouTube video, on YouTube
